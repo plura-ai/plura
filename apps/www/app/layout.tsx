@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={` bg-background font-sans min-h-screen  ${GeistSans.variable} antialiased`}
+        className={`min-h-screen bg-background font-sans ${GeistSans.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -24,7 +24,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex  flex-col bg-background mx-auto">
+          <div className="relative flex min-h-screen flex-col bg-background mx-auto">
             {children}
           </div>
         </ThemeProvider>

@@ -39,10 +39,10 @@ export function MainNav() {
           Demo
         </Link>
         <Link
-          href="/usage"
+          href="/examples"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/usage")
+            pathname?.startsWith("/examples")
               ? "text-foreground"
               : "text-foreground/60",
           )}
