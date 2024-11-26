@@ -2,28 +2,38 @@
   "name": "plura-api",
   "scripts": {
     "dev": "next dev -p 3001 --turbopack",
+    "prebuild": "turbo --filter=@repo/db db:generate",
     "build": "next build",
     "start": "next start -p 5555",
     "preview": "next build && next start -p 5555",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "test": "vitest --run",
-    "db:generate": "prisma generate",
+    "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@hono/node-server": "^1.13.5",
+    "@hono/zod-validator": "^0.4.1",
+    "@prisma/client": "^5.22.0",
+    "@repo/auth": "workspace:*",
     "@repo/db": "workspace:*",
-    "contentlayer2": "^0.5.3",
+    "@repo/mail": "workspace:*",
+    "@repo/types": "workspace:*",
+    "@repo/cache": "workspace:*",
     "hono": "^4.6.9",
     "next": "15.0.2",
+    "prisma": "^5.22.0",
     "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028"
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
+    "dotenv": "^16.4.5",
     "typescript": "^5"
   }
 }

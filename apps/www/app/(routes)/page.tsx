@@ -1,58 +1,64 @@
 "use client";
+import AboutSection from "@/components/custom/hero/about.sec";
+import AgentsSec from "@/components/custom/hero/agents.sec";
+import { TextShimmer } from "@/components/custom/text-shimmer";
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@/components/custom/page-header";
+} from "@/components/custom/text-wrappers";
+import BlurFade from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
-import HeroVideoDialog from "@/components/ui/hero-video-dialog";
-import { RainbowButton } from "@/components/ui/rainbow-button";
+import { siteConfig } from "@/config/site.config";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container relative">
-      <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(211,211,211,0.15),rgba(255,255,255,0))]" />
+    <div className="flex flex-col items-center md:items-start justify-center overflow-hidden">
+      <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(211,211,211,0.15),rgba(255,255,255,0))] opacity-40" />
+      
+      <div className="px-8 md:px-12">
       <PageHeader>
-        {/* <Announcement /> */}
+        <BlurFade delay={0.30} inView>
         <PageHeaderHeading>
-          Build your own ai powered support system for your SAAS
+          {siteConfig.homePage.heading}
         </PageHeaderHeading>
+        </BlurFade>
+        
+        <BlurFade delay={0.30 * 2} inView>
         <PageHeaderDescription>
-          Empower your SAAS support service with your own AI agent. Let our
-          intelligent assistant handle your customer queries, provide instant
-          solutions, and enhance your customer satisfaction.
+        {siteConfig.homePage.description}
         </PageHeaderDescription>
+        </BlurFade>
+
+        <BlurFade delay={0.30 * 3} inView>
         <PageActions>
-          <Button size={"lg"} variant={"outline"}>
-            <Link href="/docs">Get Started Free</Link>
+        <Link href="/auth">
+          <Button size={"lg"} className="rounded-xl">
+            {siteConfig.homePage.startBtn}
           </Button>
-          <RainbowButton>
-            <Link target="_blank" rel="noreferrer" href={"#"}>
-              Get Premium For $15
-            </Link>
-          </RainbowButton>
+          </Link>
+          <Link href="/pricing">
+          <Button size={"lg"} variant={"secondary"} className="rounded-xl">
+            <TextShimmer duration={3}>
+            {siteConfig.homePage.premBtn}
+            </TextShimmer>
+          </Button>
+          </Link>
         </PageActions>
+        </BlurFade>
       </PageHeader>
-      <section id="demo">
-        <div className="relative">
-          <HeroVideoDialog
-            className="dark:hidden block"
-            animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-            thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-            thumbnailAlt="Hero Video"
-          />
-          <HeroVideoDialog
-            className="hidden dark:block"
-            animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-            thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
-            thumbnailAlt="Hero Video"
-          />
-        </div>
+      </div>
+
+      <section id="about" className="flex flex-1 items-center justify-center">
+        <AboutSection/>
       </section>
+
+      <section id="chatbotsec" className="flex flex-1 items-center justify-center">
+        <AgentsSec/>
+      </section>
+
     </div>
   );
 }

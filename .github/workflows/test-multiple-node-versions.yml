@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - main
-      - 'feature/*'
-      - 'bugfix/*'
   pull_request:
     branches:
       - main
-      - 'feature/*'
+      - 'feat/*'
       - 'bugfix/*'
 
 jobs:
@@ -17,19 +15,39 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.18.0, 18.20.4, 22.11.0, 19.9.0, 23.1.0] # we dont support bellow v18
+        node-version: [20.18.0, 18.20.4, 22.11.0, 19.9.0, 23.1.0] # Ensure all versions are >= v18
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9.12.1
+          run_install: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Set environment variables
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
+          echo "RESEND_API=${{ secrets.RESEND_API }}" >> $GITHUB_ENV
+
+      - name: Log environment variables (debug)
+        run: |
+          echo "DATABASE_URL=$DATABASE_URL"
+          echo "RESEND_API=$RESEND_API"
+
+      - name: Set up .env file for tests in apps/api
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> apps/api/.env
+          echo "RESEND_API=${{ secrets.RESEND_API }}" >> apps/api/.env
+          cat apps/api/.env # Verify .env contents
 
       - name: Cache pnpm modules
         uses: actions/cache@v3
@@ -41,6 +59,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        
-      - name: Run tests
-        run: pnpm test
+
+      - name: Install trubo 
+        run: pnpm install -g turbo
+
+      - name: Run Turbo tests
+        run: turbo test

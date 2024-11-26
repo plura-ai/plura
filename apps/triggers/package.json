@@ -1,0 +1,20 @@
+{
+  "name": "triggers",
+  "version": "1.0.0",
+  "scripts": {
+    "trigger": "pnpm dlx trigger.dev@latest dev",
+    "deploy": "pnpm dlx trigger.dev@latest deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@repo/cache": "workspace:*",
+    "@repo/db": "workspace:*",
+    "@supabase/supabase-js": "^2.46.1",
+    "@trigger.dev/sdk": "^3.1.2"
+  },
+  "devDependencies": {
+    "@trigger.dev/build": "^3.1.2"
+  }
+}

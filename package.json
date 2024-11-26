@@ -10,7 +10,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo run db:generate && turbo build",
     "build:www": "turbo --filter=plura-www build",
     "build:app": "turbo --filter=plura-app build",
     "build:api": "turbo --filter=plura-api build",
@@ -26,6 +26,7 @@
     "format:check": "turbo run format:check"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/supertest": "^6.0.2",
@@ -48,9 +49,10 @@
     "next": "15.0.2",
     "next-auth": "5.0.0-beta.25",
     "postcss": "^8",
+    "posthog-js": "^1.184.1",
     "supertest": "^7.0.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
+    "typescript": "^5.6.3",
     "vite-tsconfig-paths": "^5.1.0",
     "vitest": "^2.1.4"
   }

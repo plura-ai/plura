@@ -1,0 +1,19 @@
+{
+  "name": "@repo/auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "exports": {
+    ".": "./src/auth.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@repo/db": "workspace:*",
+    "better-auth": "0.8.6-beta.4",
+    "better-call": "0.2.14-beta.3",
+    "oslo": "^1.2.1"
+  }
+}

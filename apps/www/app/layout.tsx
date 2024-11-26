@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/theme-provider";
+import { PosthogProvider } from "@/hooks/posthog";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Plura",
@@ -15,20 +17,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`min-h-screen bg-background font-sans ${GeistSans.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+      <PosthogProvider>
+        <body
+          className={` bg-background font-sans min-h-screen  ${GeistSans.variable} antialiased`}
         >
-          <div className="relative flex min-h-screen flex-col bg-background mx-auto">
-            {children}
-          </div>
-        </ThemeProvider>
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="flex flex-col items-center bg-background mx-auto">
+              {children}
+            </div>
+          </ThemeProvider>
+          <Toaster />
+        </body>
+      </PosthogProvider>
     </html>
   );
 }

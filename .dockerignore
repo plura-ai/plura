@@ -1,6 +1,0 @@
-node_modules
-pnpm-debug.log
-.git
-.gitignore
-*.md
-dist

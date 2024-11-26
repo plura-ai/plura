@@ -5,6 +5,7 @@ node_modules
 .pnp
 .pnp.js
 
+
 # Local env files
 .env
 .env.local
@@ -36,3 +37,6 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+
+

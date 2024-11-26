@@ -1,0 +1,22 @@
+{
+  "name": "@repo/mail",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@react-email/components": "0.0.27",
+    "better-auth": "0.8.1-beta.1",
+    "react": "18.3.1",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "resend": "4.0.1-alpha.0"
+  },
+  "devDependencies": {
+    "react-email": "3.0.2"
+  }
+}
