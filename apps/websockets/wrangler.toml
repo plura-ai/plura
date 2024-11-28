@@ -1,0 +1,9 @@
+name = "plura-websockets"
+main = "src/index.ts"
+compatibility_date = "2024-11-28"
+
+[vars]
+PORT = 3000
+
+[env]
+production = { vars = { "ENVIRONMENT" = "production" } }
