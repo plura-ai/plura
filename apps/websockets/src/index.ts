@@ -31,13 +31,13 @@ function handleWebSocket(ws: WebSocket) {
 		}
 	});
 
-	ws.addEventListener('close', () => {
-		console.log('Client disconnected');
-	});
+ws.addEventListener('close', () => {
+	console.log('Client disconnected');
+});
 
-	ws.addEventListener('error', (err) => {
-		console.error('WebSocket error:', err);
-	});
+ws.addEventListener('error', (err) => {
+	console.error('WebSocket error:', err);
+});
 
-	ws.send('WebSocket connection established!');
+ws.send('WebSocket connection established!');
 }
