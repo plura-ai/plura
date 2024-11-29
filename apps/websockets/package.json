@@ -2,6 +2,9 @@
 	"name": "plura-websockets",
 	"version": "0.0.0",
 	"private": true,
+	"description": "WebSocket server implementation for Plura",
+	"author": "RITIK-KHARYA",
+	"license": "UNLICENSED",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
@@ -17,7 +20,8 @@
 		"@cloudflare/vitest-pool-workers": "^0.5.2",
 		"@cloudflare/workers-types": "^4.20241127.0",
 		"typescript": "^5.5.2",
-		"wrangler": "^3.91.0"
+		"wrangler": "^3.91.0",
+		"@types/ws": "8.5.10"
 	},
 	"dependencies": {
 		"prettier": "^3.2.5"
