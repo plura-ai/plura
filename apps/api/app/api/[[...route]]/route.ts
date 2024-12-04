@@ -29,8 +29,14 @@ const allowedOrigins = [
 app.use(
   "*",
   cors({
-    origin: allowedOrigins, // Allow requests from your frontend origin
+    origin: (origin)=> {
+      if(allowedOrigins.includes(origin)){
+        return origin
+      }
+      return null;
+    }, // Allow requests from your frontend origin
     allowMethods: ["GET", "POST", "OPTIONS"],
+    allowHeaders:["Content-Type","Authorization"]
   }),
 );
 
