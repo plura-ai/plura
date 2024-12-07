@@ -1,0 +1,56 @@
+name: New feature
+description: Suggest or request a new feature
+title: "💡 [FEATURE] - <title>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to properly describe the new feature you are suggesting.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      placeholder: A button in the screen X that allows to do Y
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: What is the current behaviour?
+      placeholder: Currently this is happening
+  - type: textarea
+    id: expected
+    attributes:
+      label: What was the expected behaviour?
+      placeholder: I expected this to happen
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      placeholder: |
+        Add any other context or screenshots about the feature request here.
+  - type: dropdown
+    id: assign
+    attributes:
+      label: "Would you like to work on this issue?"
+      options:
+        - "Yes"
+        - "No"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Please check all the boxes below
+      options:
+        - label: I have read and followed the project's code of conduct
+          required: true
+        - label: I have searched for similar issues before creating this one
+          required: true
+        - label: I have provided all the necessary information to understand and reproduce the issue
+          required: true
+        - label: I am willing to contribute to the resolution of this issue
+          required: false
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your suggestion! Let's see together if it can be implemented.
