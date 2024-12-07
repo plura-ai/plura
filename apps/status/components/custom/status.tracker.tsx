@@ -3,7 +3,9 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 export interface StatusData {
   status: 'operational' | 'degraded' | 'down' | 'warning'
-  timestamp: string
+  timestamp: string,
+  source:string
+
 }
 
 interface StatusTrackerProps {

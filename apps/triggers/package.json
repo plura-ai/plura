@@ -4,6 +4,7 @@
   "scripts": {
     "trigger": "pnpm dlx trigger.dev@latest dev",
     "deploy": "pnpm dlx trigger.dev@latest deploy"
+    
   },
   "keywords": [],
   "author": "",

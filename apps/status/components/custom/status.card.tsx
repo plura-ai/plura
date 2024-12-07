@@ -52,39 +52,57 @@ export default function StatusCard({wwwData}:{wwwData: StatusData[]}) {
         <AccordionItem value="item-1">
           <AccordionTrigger
             className="flex w-full items-center justify-between rounded-xl hover:no-underline bg-background px-5 data-[state=open]:bg-transparent"
-            onClick={() => handleToggle('item-1')}
+            onClick={() => handleToggle("item-1")}
           >
             <span className="text-sm font-medium">Websites</span>
             <Badge
               className={`mr-5 shadow-none rounded-xl text-white ${
-                isOpen('item-1') ? 'bg-background hover:bg-background' : 'bg-secondary hover:bg-secondary'
+                isOpen("item-1")
+                  ? "bg-background hover:bg-background"
+                  : "bg-secondary hover:bg-secondary"
               }`}
             >
               <IconWifi className="size-5 mr-2 text-green-500" /> Operational
             </Badge>
           </AccordionTrigger>
           <AccordionContent className="p-5">
-          <Card className="mx-auto bg-transparent shadow-none">
-      <p className="text-tremor-default flex items-center justify-between font-semibold">
-        <Link href={"https://www.plura.pro"} rel="noopener noreferrer" target="_blank">
-        <span>{new URL("https://www.plura.pro").host}</span>
-        </Link>
-        <span className="text-emerald-500">{calculateUptime(wwwData)}% uptime</span>
-      </p>
-      <StatusTracker data={wwwData}/>
-    </Card>
+            <Card className="mx-auto bg-transparent shadow-none">
+              <p className="text-tremor-default flex items-center justify-between font-semibold">
+                <Link
+                  href={"https://www.plura.pro"}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span>{new URL("https://www.plura.pro").host}</span>
+                </Link>
+                <span className="text-emerald-500">
+                  {calculateUptime(wwwData)}% uptime
+                </span>
+              </p>
+              <div className='flex flex-col p-5'>
+                {" "}
+                webstatus
+                <StatusTracker data={wwwData.filter((item) => item.source === 'webStatus')} />
+                apiStatus
+                <StatusTracker data={wwwData.filter((item) => item.source === 'apiStatus')} />
+                appStatus
+                <StatusTracker data={wwwData.filter((item) => item.source === 'appStatus')} />
+              </div>
+            </Card>
           </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-2">
           <AccordionTrigger
             className="flex w-full items-center justify-between rounded-xl hover:no-underline bg-background px-5 data-[state=open]:bg-transparent"
-            onClick={() => handleToggle('item-2')}
+            onClick={() => handleToggle("item-2")}
           >
             <span className="text-sm font-medium">Database</span>
             <Badge
               className={`mr-5 shadow-none rounded-xl text-white ${
-                isOpen('item-2') ? 'bg-background hover:bg-background' : 'bg-secondary hover:bg-secondary'
+                isOpen("item-2")
+                  ? "bg-background hover:bg-background"
+                  : "bg-secondary hover:bg-secondary"
               }`}
             >
               <IconWifi className="size-5 mr-2 text-yellow-500" /> Operational
@@ -98,12 +116,14 @@ export default function StatusCard({wwwData}:{wwwData: StatusData[]}) {
         <AccordionItem value="item-3">
           <AccordionTrigger
             className="flex w-full items-center justify-between rounded-xl hover:no-underline bg-background px-5 data-[state=open]:bg-transparent"
-            onClick={() => handleToggle('item-3')}
+            onClick={() => handleToggle("item-3")}
           >
             <span className="text-sm font-medium">Services</span>
             <Badge
               className={`mr-5 shadow-none rounded-xl text-white ${
-                isOpen('item-3') ? 'bg-background hover:bg-background' : 'bg-secondary hover:bg-secondary'
+                isOpen("item-3")
+                  ? "bg-background hover:bg-background"
+                  : "bg-secondary hover:bg-secondary"
               }`}
             >
               <IconWifi className="size-5 mr-2 text-red-500" /> Operational

@@ -14,7 +14,7 @@ export const siteStatusTask = schedules.task({
       API: "https://api.plura.pro/v1/health",
       APP: "https://app.plura.pro/events",
     };
-    
+
     const latencies: Record<string, number | null> = {};
     const statuses: Record<string, string | null> = {};
     let totalLatency = 0;

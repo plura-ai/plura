@@ -58,19 +58,31 @@ const Page = () => {
             };
   
             const webData = todayStatus.map((status: StatusT) => ({
-              status: getServiceStatus(status.latencies.WEB, status.statuses.WEB),
+              status: getServiceStatus(
+                status.latencies.WEB,
+                status.statuses.WEB
+              ),
               timestamp: status.timestamp,
             }));
-  
+
             const apiData = todayStatus.map((status: StatusT) => ({
-              status: getServiceStatus(status.latencies.API, status.statuses.API),
+              status: getServiceStatus(
+                status.latencies.API,
+                status.statuses.API
+              ),
               timestamp: status.timestamp,
             }));
-  
+
             const appData = todayStatus.map((status: StatusT) => ({
-              status: getServiceStatus(status.latencies.APP, status.statuses.APP),
+              status: getServiceStatus(
+                status.latencies.APP,
+                status.statuses.APP
+              ),
               timestamp: status.timestamp,
             }));
+            console.log(webData);
+            console.log("apidata", apiData);
+            console.log("appdata", appData);
   
             setWebStatus(webData);
             setApiStatus(apiData);
@@ -101,26 +113,32 @@ const Page = () => {
           <Activity className="size-8 text-green-500" />
         </div>
         <h1 className="text-4xl font-bold">
-  {isFetching
-    ? "All services are ..."
-    : webStatus.length > 0 &&
-      apiStatus.length > 0 &&
-      appStatus.length > 0 &&
-      webStatus[webStatus.length - 1].status === "operational" &&
-      apiStatus[apiStatus.length - 1].status === "operational" &&
-      appStatus[appStatus.length - 1].status === "operational"
-    ? "All services are online"
-    : "Some services are experiencing issues"}
-</h1>
+          {isFetching
+            ? "All services are ..."
+            : webStatus.length > 0 &&
+                apiStatus.length > 0 &&
+                appStatus.length > 0 &&
+                webStatus[webStatus.length - 1].status === "operational" &&
+                apiStatus[apiStatus.length - 1].status === "operational" &&
+                appStatus[appStatus.length - 1].status === "operational"
+              ? "All services are online"
+              : "Some services are experiencing issues"}
+        </h1>
         <span className="text-sm text-muted-foreground">
           Last updated:{" "}
           {webStatus.length > 0
-            ? `${new Date(webStatus[webStatus.length - 1].timestamp).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
+            ? `${new Date(webStatus[webStatus.length - 1].timestamp).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}`
             : "..."}
         </span>
       </div>
       <div className="flex w-full h-full px-10 md:px-40 gap-4">
-        <StatusCard wwwData={webStatus} />
+        <StatusCard
+          wwwData={[
+            ...webStatus.map((item) => ({ ...item, source: "webStatus" })),
+            ...apiStatus.map((item) => ({ ...item, source: "apiStatus" })),
+            ...appStatus.map((item) => ({ ...item, source: "appStatus" })),
+          ]}
+        />
       </div>
     </div>
   );
