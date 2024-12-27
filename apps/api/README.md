@@ -17,39 +17,11 @@ Before setting up the API, ensure you have:
 ```bash
 pnpm install
 ```
-2. Create a `.env` file in the `apps/api` directory with the following variables:
-
-```bash
-# Required: Your Resend API key for email services
-RESEND_API=
-
-# Required: Base URL of your application
-BASE_URL=
-
-# Required: Authentication configuration
-BETTER_AUTH_SECRET=
-BETTER_AUTH_URL=
-
-# Optional: OAuth provider credentials
-# For Google OAuth (https://console.cloud.google.com)
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-
-# For Discord OAuth (https://discord.com/developers)
-DISCORD_CLIENT_ID=
-DISCORD_CLIENT_SECRET=
-
-# For GitHub OAuth (https://github.com/settings/developers)
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-   
-# Required: PostgreSQL connection string
-DATABASE_URL=
-
-#Required: Upstash Redis configuration (https://upstash.com)
-UPSTASH_REDIS_REST_TOKEN=
-UPSTASH_REDIS_REST_URL=
-```
+2. Create a `.env` file in the `apps/api` directory and copy the contents from .env.example file:
+  
+  ```bash
+  cp .env.example .env
+  ```
 
 ## 📞 Contact
 

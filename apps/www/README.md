@@ -2,21 +2,10 @@
 
 To set up your environment for the project, follow these steps:
 
-1. **Create a `.env` file** in the root of your project. You can use the following template:
-   ```bash
-   # Required: Your Supabase URL
-   SUPABASE_URL=your_supabase_url
-   
-   # Required: Your Supabase API Key
-   SUPABASE_KEY=your_supabase_key
-   
-   # Required: PostgreSQL connection string
-   DATABASE_URL=postgresql://user:password@localhost:5432/mydb
-   
-   # Required: Upstash Redis configuration (https://upstash.com)
-   UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_rest_token
-   UPSTASH_REDIS_REST_URL=your_upstash_redis_rest_url
-   ```
+1. **Create a .env file** and copy the contents from the .env.example file: 
+   ``` bash
+   cp .env.example .env
+   ``` 
 
 2. **Install Prisma** and set up your database:
    ```bash
