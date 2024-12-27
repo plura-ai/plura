@@ -2,6 +2,12 @@
 
 The backend API service for Plura, built with Next.js, Hono, Prisma and Upstash.
 
+# Video Guide: Setting Up Full Plura Backend
+
+This video is here to help you set up the full Plura backend step by step. Click the link below to watch:
+
+👉 [Click Me to Watch the Video](https://drive.google.com/file/d/15k4DIn0FeVXKGR-T4bXx-BGHEb4ufmeH/preview)
+
 ## Check list
 
 Before setting up the API, ensure you have:
