@@ -10,19 +10,19 @@ import { siteConfig } from "@/config/site.config";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-type ContributorData = {
+interface ContributorData {
   login: string;
   id: number;
   avatar_url?: string;
   github_link: string;
-};
+}
 
 export default function About() {
   const [contributors, setContributors] = useState<ContributorData[]>([]);
-  const fetchUrl =
-    process.env.NODE_ENV === "production"
-      ? "https://api.plura.pro/v1/contributors"
-      : "http://localhost:3001/v1/contributors";
+  const fetchUrl = "https://api.plura.pro/v1/contributors";
+  // process.env.NODE_ENV === "production"
+  //   ? "https://api.plura.pro/v1/contributors"
+  //   : "http://localhost:3001/v1/contributors";
 
   useEffect(() => {
     const fetchContributors = async () => {
@@ -72,7 +72,14 @@ export default function About() {
               />
             </Card>
           </div>
-          <ContributorsGrid data={contributors} />
+        </section>
+        <section
+          id="contributors"
+          className="flex items-center justify-center w-full border-t-2 border-dashed"
+        >
+          <div className="px-8 md:px-12">
+            <ContributorsGrid data={contributors} />
+          </div>
         </section>
       </div>
     </section>

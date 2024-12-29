@@ -134,7 +134,7 @@ export function MainNav() {
         >
           Methods
         </Link>
-        <Link
+        {/* <Link
           href="/integrations"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -144,7 +144,7 @@ export function MainNav() {
           )}
         >
           Integrations
-        </Link>
+        </Link> */}
         <Link
           href="/pricing"
           className={cn(
@@ -162,7 +162,7 @@ export function MainNav() {
           rel="noreferrer"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/colors")
+            pathname?.startsWith("/status")
               ? "text-foreground"
               : "text-foreground/60",
           )}

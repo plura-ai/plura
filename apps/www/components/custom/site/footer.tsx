@@ -40,9 +40,7 @@ export function SiteFooter() {
           <p className="inline-flex text-secondary-foreground text-sm">
             Made possible with
             <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
+              href={"/about#contributors"}
               className="ml-1 text-muted-foreground underline cursor-pointer"
             >
               our crazy contributors

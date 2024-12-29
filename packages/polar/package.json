@@ -1,0 +1,14 @@
+{
+  "name": "@plura/mor",
+  "version": "0.0.0",
+  "private": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polar-sh/sdk": "^0.19.2"
+  }
+}

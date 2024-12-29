@@ -93,6 +93,9 @@ importers:
       '@plura/mail':
         specifier: workspace:*
         version: link:../../packages/mail
+      '@plura/mor':
+        specifier: workspace:*
+        version: link:../../packages/polar
       '@prisma/client':
         specifier: ^5.22.0
         version: 5.22.0(prisma@5.22.0)
@@ -427,6 +430,9 @@ importers:
       '@plura/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@plura/mor':
+        specifier: workspace:*
+        version: link:../../packages/polar
       '@radix-ui/react-accordion':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)
@@ -656,6 +662,12 @@ importers:
       react-email:
         specifier: 3.0.2
         version: 3.0.2(@opentelemetry/api@1.9.0)(@playwright/test@1.49.0)(react-dom@19.0.0-rc-02c0e824-20241028(react@18.3.1))(react@18.3.1)
+
+  packages/polar:
+    dependencies:
+      '@polar-sh/sdk':
+        specifier: ^0.19.2
+        version: 0.19.2(zod@3.23.8)
 
   packages/rag-ai:
     dependencies:
@@ -2867,6 +2879,11 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  '@polar-sh/sdk@0.19.2':
+    resolution: {integrity: sha512-n1emRNmhcAzRfVAWBiVVCJ2krBSZ4wANVTRO7hCMchYCkxyV+kiRdjyvBdVG3JpRsS6SR7yBr2+CRJkuHPPeDg==}
+    peerDependencies:
+      zod: '>= 3'
+
   '@preact/signals-core@1.8.0':
     resolution: {integrity: sha512-OBvUsRZqNmjzCZXWLxkZfhcgT+Fk8DDcT/8vD6a1xhDemodyy87UJRJfASMuSD8FaAIeGgGm85ydXhm7lr4fyA==}
 
@@ -4080,6 +4097,9 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
+
+  '@stablelib/base64@1.0.1':
+    resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
 
   '@supabase/auth-js@2.65.1':
     resolution: {integrity: sha512-IA7i2Xq2SWNCNMKxwmPlHafBQda0qtnFr8QnyyBr+KaSxoXXqEzFCnQ1dGTy6bsZjVBgXu++o3qrDypTspaAPw==}
@@ -5731,6 +5751,9 @@ packages:
 
   fast-safe-stringify@2.1.1:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
+
+  fast-sha256@1.3.0:
+    resolution: {integrity: sha512-n11RGP/lrWEFI/bWdygLxhI+pVeo1ZYIVwvvPkW7azl/rOy+F3HYRZ2K5zeE9mmkhQppyv9sQFx0JM9UabnpPQ==}
 
   fast-xml-parser@4.5.0:
     resolution: {integrity: sha512-/PlTQCI96+fZMAOLMZK4CWG1ItCbfZ/0jx7UIJFChPNrx7tcEgerUgWbeieCM9MfHInUDyK8DWYZ+YrywDJuTg==}
@@ -8070,6 +8093,9 @@ packages:
 
   standard-as-callback@2.1.0:
     resolution: {integrity: sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==}
+
+  standardwebhooks@1.0.0:
+    resolution: {integrity: sha512-BbHGOQK9olHPMvQNHWul6MYlrRTAOKn03rOe4A8O3CLWhNf4YHBqq2HJKKC+sfqpxiBY52pNeesD6jIiLDz8jg==}
 
   std-env@3.8.0:
     resolution: {integrity: sha512-Bc3YwwCB+OzldMxOXJIIvC6cPRWr/LxOp48CdQTOkPyk/t4JWWJbrilwBd7RJzKV8QW7tJkcgAmeuLLJugl5/w==}
@@ -10598,6 +10624,11 @@ snapshots:
     dependencies:
       playwright: 1.49.0
 
+  '@polar-sh/sdk@0.19.2(zod@3.23.8)':
+    dependencies:
+      standardwebhooks: 1.0.0
+      zod: 3.23.8
+
   '@preact/signals-core@1.8.0': {}
 
   '@preact/signals@1.3.1(preact@10.25.4)':
@@ -11998,6 +12029,8 @@ snapshots:
   '@simplewebauthn/types@10.0.0': {}
 
   '@socket.io/component-emitter@3.1.2': {}
+
+  '@stablelib/base64@1.0.1': {}
 
   '@supabase/auth-js@2.65.1':
     dependencies:
@@ -14451,6 +14484,8 @@ snapshots:
   fast-levenshtein@2.0.6: {}
 
   fast-safe-stringify@2.1.1: {}
+
+  fast-sha256@1.3.0: {}
 
   fast-xml-parser@4.5.0:
     dependencies:
@@ -17054,6 +17089,11 @@ snapshots:
   stackback@0.0.2: {}
 
   standard-as-callback@2.1.0: {}
+
+  standardwebhooks@1.0.0:
+    dependencies:
+      '@stablelib/base64': 1.0.1
+      fast-sha256: 1.3.0
 
   std-env@3.8.0: {}
 

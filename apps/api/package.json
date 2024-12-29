@@ -23,6 +23,7 @@
     "@repo/types": "workspace:*",
     "@plura/cache": "workspace:*",
     "@plura/crypt":"workspace:*",
+    "@plura/mor":"workspace:*",
     "hono": "^4.6.9",
     "next": "15.1.1",
     "prisma": "^5.22.0",

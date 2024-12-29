@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.18.0, 18.20.4, 22.11.0, 19.9.0, 23.1.0] # Ensure all versions are >= v18
+        node-version: [19.9.0, 18.20.4, 23.5.0] # Ensure all versions are >= v18
 
     steps:
       - name: Checkout

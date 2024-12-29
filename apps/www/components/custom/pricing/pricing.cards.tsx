@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { pricingCardConfig } from "@/config/pricing.config";
 import { TextMorph } from "../text-morph";
 import { AnimatedNumber } from "../anim-numb";
+import { IconCheck } from "@tabler/icons-react";
 
 interface PCards {
   isYearly: boolean;
@@ -20,8 +21,8 @@ export default function PricingCards({ isYearly }: PCards) {
   return (
     <div className="grid md:grid-cols-3 gap-5">
       {/* Plura Basic */}
-      <Card className="bg-[#171717] rounded-2xl p-2 max-w-sm">
-        <CardHeader className="rounded-2xl border-t-2 border-r border-[#333] border-opacity-80 m-3 bg-gradient-to-br from-[#262626] to-[#262829]">
+      <Card className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-2 max-w-sm">
+        <CardHeader className="rounded-2xl border-t-2 border-r border-[#333] border-opacity-80 m-3 bg-gradient-to-br from-secondary/30 to-[#262829]">
           <h3 className="text-xl font-semibold">
             {pricingCardConfig.basic.name}
           </h3>
@@ -66,7 +67,7 @@ export default function PricingCards({ isYearly }: PCards) {
                 key={index}
                 className="flex items-start gap-2 text-sm text-gray-400"
               >
-                <Check className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                <IconCheck stroke={4} className="h-4 w-4 mt-0.5 shrink-0 bg-[#404040] rounded-full font-bold p-0.5 text-primary" />
                 <span>{feature}</span>
               </li>
             ))}
