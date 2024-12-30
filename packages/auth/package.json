@@ -12,7 +12,7 @@
   "dependencies": {
     "@plura/db": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "better-auth": "1.0.5",
+    "better-auth": "1.1.6",
     "better-call": "0.2.14-beta.3",
     "oslo": "^1.2.1"
   }
