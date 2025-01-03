@@ -33,7 +33,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { usePathname } from "next/navigation";
-import QuickActionButton from "./QuickActionButton";
+import QuickActionButton from "./quick-action-btn";
+
 
 // Menu items.
 const items = [
@@ -168,11 +169,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <QuickActionButton />
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <QuickActionButton />
       </SidebarFooter>
     </Sidebar>
   );

@@ -1,18 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Zap } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import {
   CommandDialog,
@@ -42,11 +30,11 @@ const QuickActionButton = () => {
   }, []);
 
   return (
-    <div>
-      <Button variant="outline">
+    <div className="flex items-center justify-center">
+      <Button variant="default" onClick={toggleOverlay}>
         Quick Actions
-        <Badge className="block px-2 py-0.5 rounded-md text-xs font-semibold hover:bg-none">
-          Ctrl + K{" "}
+        <Badge className="rounded-md text-xs gap-1 font-semibold hover:bg-secondary" variant={"secondary"}>
+          <span className="text-xs">⌘</span>K 
         </Badge>
       </Button>
 
