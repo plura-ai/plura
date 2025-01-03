@@ -2,19 +2,156 @@
 import { IconCoins, IconInfoSquareRounded } from "@tabler/icons-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { MailTable } from "../../../components/custom/dashboard/mail-table";
+import { Mail } from "../mails/columns";
+import { UserRound } from "lucide-react";
+import { Chats } from "../../../components/custom/dashboard/chat-table";
 import InfoBreadCrumb from "@/components/custom/infobar/bread-crumb";
+
+const mails: Mail[] = [
+  {
+    Email: "saidevdhal@gmail.com",
+    Source: "Agent2",
+    date: "13-03-2023",
+    id: "bsd45ghty",
+  },
+  {
+    Email: "sarahsmith@gmail.com",
+    Source: "Agent2",
+    date: "13-03-2023",
+    id: "bsd456ghty",
+  },
+  {
+    Email: "rahulshah0728@gmail.com",
+    Source: "Agent1",
+    date: "12-01-2023",
+    id: "asd123nadsf",
+  },
+  {
+    Email: "hiteshchoudhary@gmail.com",
+    Source: "Agent1",
+    date: "14-02-2023",
+    id: "csd789jklu",
+  },
+  {
+    Email: "ayush@gmail.com",
+    Source: "Agent2",
+    date: "15-05-2023",
+    id: "dsd012mnop",
+  },
+  {
+    Email: "piyushgarg@gmail.com",
+    Source: "Agent1",
+    date: "16-04-2023",
+    id: "esd345qrst",
+  },
+  {
+    Email: "gautam@gmail.com",
+    Source: "Agent2",
+    date: "17-07-2023",
+    id: "fsd678uvwx",
+  },
+  {
+    Email: "rahuldev@gmail.com",
+    Source: "Agent1",
+    date: "18-06-2023",
+    id: "gsd901yzab",
+  },
+  {
+    Email: "shaurya@gmail.com",
+    Source: "Agent2",
+    date: "19-09-2023",
+    id: "hsd234cdef",
+  },
+  {
+    Email: "narendrachoudhary@gmail.com",
+    Source: "Agent1",
+    date: "20-08-2023",
+    id: "isd567ghij",
+  },
+];
+
+const chats = [
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "open",
+    ticketId: "TCK-1001",
+    dateTime: "2025-01-01T10:30:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "open",
+    ticketId: "TCK-1002",
+    dateTime: "2025-01-01T12:45:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Manual",
+    status: "open",
+    ticketId: "TCK-1003",
+    dateTime: "2025-01-01T14:20:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "closed",
+    ticketId: "TCK-1004",
+    dateTime: "2025-01-01T15:10:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Manual",
+    status: "open",
+    ticketId: "TCK-1005",
+    dateTime: "2025-01-01T16:50:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "closed",
+    ticketId: "TCK-1006",
+    dateTime: "2025-01-01T18:00:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "open",
+    ticketId: "TCK-1007",
+    dateTime: "2025-01-01T19:15:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Manual",
+    status: "closed",
+    ticketId: "TCK-1008",
+    dateTime: "2025-01-01T20:30:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "open",
+    ticketId: "TCK-1009",
+    dateTime: "2025-01-01T21:45:00Z",
+  },
+  {
+    icon: UserRound,
+    status2: "Automatic",
+    status: "closed",
+    ticketId: "TCK-1010",
+    dateTime: "2025-01-01T23:00:00Z",
+  },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col h-full w-full items-start overflow-hidden px-5 md:px-2">
       <InfoBreadCrumb />
-
       <Tabs defaultValue="overview" className="space-y-5">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
-          <TabsTrigger value="reports">Reports</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
         </TabsList>
         <TabsContent value="overview" className="space-y-4">
           <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
@@ -121,6 +258,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+          <MailTable mails={mails} />
+          <Chats chats={chats} />
         </TabsContent>
       </Tabs>
     </div>
