@@ -120,12 +120,7 @@ export default function page() {
                 </Button>
             </div>
             {fliteredAnalyticsData?.length > 0 ? (
-                <>
-                    <Card className={cn("mt-6 border py-3 pl-5 text-start")}>
-                        <p className="text-muted-foreground text-sm">You have audit logs available </p>
-                    </Card>
-                    <AnalyticsTable data={fliteredAnalyticsData}/>
-                </>
+                <AnalyticsTable data={fliteredAnalyticsData}/>
             ) : (
                 <div>
                     <Card className={cn("mt-6 border py-3 pl-5 text-start")}>
