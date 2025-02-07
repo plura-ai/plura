@@ -33,7 +33,7 @@ export default function AgentsCreateDialog() {
           <AlertDialogTrigger asChild>
             <Button className="flex items-center gap-2">
               Create
-              <Plus/>
+              <Plus />
             </Button>
           </AlertDialogTrigger>
         </div>

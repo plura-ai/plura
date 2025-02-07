@@ -101,7 +101,7 @@ const IntelItems = [
 
 export function AppSidebar() {
   const path = usePathname();
-  const {state} = useSidebar();
+  const { state } = useSidebar();
   return (
     <Sidebar collapsible="icon" variant="floating">
       <SidebarHeader>
@@ -138,7 +138,8 @@ export function AppSidebar() {
                   <SidebarMenuButton
                     asChild
                     tooltip={item.title}
-                    isActive={path.includes(item.url)}>
+                    isActive={path.includes(item.url)}
+                  >
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>

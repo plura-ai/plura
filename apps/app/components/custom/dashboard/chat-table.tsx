@@ -39,7 +39,8 @@ export const Chats: React.FC<ChatsProps> = ({ chats }) => {
                       <div className="ml-2">
                         <p className="text ">{chat.ticketId}</p>
                         <Badge
-                          variant={`${chat.status === "open" ? "secondary" : "destructive"}`}>
+                          variant={`${chat.status === "open" ? "secondary" : "destructive"}`}
+                        >
                           {chat.status}
                         </Badge>
                       </div>
@@ -65,7 +66,7 @@ export const Chats: React.FC<ChatsProps> = ({ chats }) => {
                     </div>
                   </TableCell>
                 </TableRow>
-              )
+              ),
             )}
           </TableBody>
         </Table>
@@ -73,7 +74,8 @@ export const Chats: React.FC<ChatsProps> = ({ chats }) => {
       <div className="text-center">
         <button
           className="p-2 border rounded-lg text-sm w-full bg-card"
-          onClick={() => setIsDropdownOpen((prev) => !prev)}>
+          onClick={() => setIsDropdownOpen((prev) => !prev)}
+        >
           {isDropdownOpen ? "View Less" : "View More"}
         </button>
       </div>

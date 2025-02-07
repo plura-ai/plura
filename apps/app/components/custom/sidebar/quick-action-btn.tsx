@@ -40,7 +40,8 @@ const QuickActionButton: React.FC<QuickActionButtonProps> = ({ collapse }) => {
           Quick Actions
           <Badge
             className="rounded-md text-xs gap-1 font-semibold hover:bg-secondary"
-            variant={"secondary"}>
+            variant={"secondary"}
+          >
             <span className="text-xs">⌘</span>K
           </Badge>
         </Button>
