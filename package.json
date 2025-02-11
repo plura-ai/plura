@@ -46,7 +46,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.2",
     "hono": "^4.6.9",
-    "next": "15.1.6",
+    "next": "15.1.7",
     "next-auth": "5.0.0-beta.25",
     "postcss": "^8",
     "posthog-js": "^1.184.1",
