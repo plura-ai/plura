@@ -18,7 +18,7 @@ interface AnalyticsData {
   date: string;
 }
 
-export default function AnalyticsTable({data}: {data: AnalyticsData[]}) {
+export default function AnalyticsTable({ data }: { data: AnalyticsData[] }) {
   return (
     <Card className="w-full rounded-lg border text-white mt-6 mb-3">
       <Table className="">
@@ -27,15 +27,23 @@ export default function AnalyticsTable({data}: {data: AnalyticsData[]}) {
             <TableHead className="text-primary">Action</TableHead>
             <TableHead className="text-primary">Target</TableHead>
             <TableHead className="text-primary">Date</TableHead>
-            <TableHead className="text-primary text-right px-9">Actions</TableHead>
+            <TableHead className="text-primary text-right px-9">
+              Actions
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody className="rounded-b-lg">
           {data.map((row, index) => (
             <TableRow key={index} className="rounded-md">
-              <TableCell className="text-muted-foreground">{row.action}</TableCell>
-              <TableCell className="text-muted-foreground">{row.target}</TableCell>
-              <TableCell className="text-muted-foreground">{row.date}</TableCell>
+              <TableCell className="text-muted-foreground">
+                {row.action}
+              </TableCell>
+              <TableCell className="text-muted-foreground">
+                {row.target}
+              </TableCell>
+              <TableCell className="text-muted-foreground">
+                {row.date}
+              </TableCell>
               <TableCell className="text-right">
                 <AnalyicDialog key={index} data={row} />
               </TableCell>
