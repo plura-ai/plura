@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@react-email/components": "0.0.27",
-    "better-auth": "1.1.20",
+    "better-auth": "1.1.21",
     "react": "18.3.1",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "resend": "4.0.1-alpha.0"

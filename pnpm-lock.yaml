@@ -508,8 +508,8 @@ importers:
         specifier: ^3.21.0
         version: 3.28.1(react@19.0.0-rc-02c0e824-20241028)
       better-auth:
-        specifier: 1.1.20
-        version: 1.1.20
+        specifier: 1.1.21
+        version: 1.1.21
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.1
@@ -599,11 +599,11 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       better-auth:
-        specifier: 1.1.20
-        version: 1.1.20
+        specifier: 1.1.21
+        version: 1.1.21
       better-auth-harmony:
         specifier: ^1.1.3
-        version: 1.1.3(better-auth@1.1.20)
+        version: 1.1.3(better-auth@1.1.21)
       better-call:
         specifier: 0.2.14-beta.3
         version: 0.2.14-beta.3
@@ -676,8 +676,8 @@ importers:
         specifier: 0.0.27
         version: 0.0.27(react-dom@19.0.0-rc-02c0e824-20241028(react@18.3.1))(react@18.3.1)
       better-auth:
-        specifier: 1.1.20
-        version: 1.1.20
+        specifier: 1.1.21
+        version: 1.1.21
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -4617,8 +4617,8 @@ packages:
     peerDependencies:
       better-auth: ^1.0.3
 
-  better-auth@1.1.20:
-    resolution: {integrity: sha512-aAcBGVVQJepGe9FY0/QIPBPqWwXIjahPq8zMgFnWOTyee6/vaE8aCRVV8hOp2DEABhKypHSUSK5CUPEUgL9fdQ==}
+  better-auth@1.1.21:
+    resolution: {integrity: sha512-scyrQn8O9XL4oKmTt7nnA50P0v0RnI39yKevlMa0mI3646hXq/QOThjUrYy+cYCoq4tNLVsctQa9yUUMN9ZzhA==}
 
   better-call@0.2.14-beta.3:
     resolution: {integrity: sha512-lA54ETanzM0xUZnQt6lm3BdTr4gVDyAe1DNpCQSTYUnwnGGOmQG8ob0FYivVd0XHsHQK68r01GB5c6cUuu4llQ==}
@@ -12734,14 +12734,14 @@ snapshots:
 
   base64id@2.0.0: {}
 
-  better-auth-harmony@1.1.3(better-auth@1.1.20):
+  better-auth-harmony@1.1.3(better-auth@1.1.21):
     dependencies:
-      better-auth: 1.1.20
+      better-auth: 1.1.21
       libphonenumber-js: 1.11.17
       mailchecker: 6.0.15
       validator: 13.12.0
 
-  better-auth@1.1.20:
+  better-auth@1.1.21:
     dependencies:
       '@better-auth/utils': 0.2.3
       '@better-fetch/fetch': 1.1.12
